@@ -1,24 +1,16 @@
-## RFID Reader Detection Utilities
+# RFID Reader Scripts
 
 Monitors one or more Sycreader RFID readers simultaneously and prints each scan to the terminal as it occurs.  
 Each reader runs in its own thread.
 
 ---
 
-## Requirements
-
-- Linux (reads from `/proc/bus/input/devices`)
-- Python 3
-- [`evdev`](https://python-evdev.readthedocs.io/en/latest/)
-
-***Note:*** Root privileges are required to read from `/dev/input/eventX` devices.
-
----
+# Main program
 
 ## Usage
 
 ```bash
-sudo python3 read_RFID.py
+python3 read_RFID.py
 ```
 
 On launch, the script will:
@@ -37,29 +29,68 @@ Press **Ctrl+C** to stop monitoring.
 ============================================================
 Scanning for connected RFID readers...
 
-Found 2 RFID reader(s):
-============================================================
-  dev_path:      /dev/input/event17
-  dev_name:      Sycreader RFID Technology Co., Ltd SYC ID&IC USB Reader
-  physical_port: usb-0000:05:00.4-1.3/input0
-  port_name:     front USB port, Hub position #2
-============================================================
-============================================================
-  dev_path:      /dev/input/event16
-  dev_name:      Sycreader RFID Technology Co., Ltd SYC ID&IC USB Reader
-  physical_port: usb-0000:05:00.4-1.4/input0
-  port_name:     front USB port, Hub position #1
+Identified 2 RFID reader(s), Connected to ports:
+  -->  Gate_2
+  -->  Gate_4
 ============================================================
 
 Monitoring for keyboard events... (Ctrl+C to stop)
 
 
 0621221024
-[2026-04-15 16:36:35.306] | Port: front USB port, Hub position #2     | RFID Scan: 0621221024
+2026-04-15 18:48:00.409 | Location: Gate_2 | Animal: 0621221024
 
 0621221024
-[2026-04-15 16:36:38.466] | Port: front USB port, Hub position #1     | RFID Scan: 0621221024
+2026-04-15 18:48:01.889 | Location: Gate_4 | Animal: 0621221024
 ```
+
+<br>
+
+---
+
+# Identify Connected RFID readers
+
+## Usage
+
+### Run directly
+```bash
+python3 list_RFID_readers.py
+```
+### Import as a module
+
+```python
+from list_RFID_readers import get_RFID_devices
+
+devices = get_RFID_devices()
+for d in devices:
+    print(d['physical_port'], d['dev_path'])
+```
+
+## Example Output
+```
+List of connected RFID readers:
+============================================================
+  dev_path: /dev/input/event16
+  dev_name: Sycreader RFID Technology Co., Ltd SYC ID&IC USB Reader
+  physical_port: usb-0000:05:00.3-3.3/input0
+  port_name: Gate_2
+============================================================
+  dev_path: /dev/input/event17
+  dev_name: Sycreader RFID Technology Co., Ltd SYC ID&IC USB Reader
+  physical_port: usb-0000:05:00.3-3.1.4/input0
+  port_name: Gate_4
+============================================================
+```
+
+---
+
+## Requirements
+
+- Linux (reads from `/proc/bus/input/devices`)
+- Python 3
+- [`evdev`](https://python-evdev.readthedocs.io/en/latest/)
+
+***Note:*** Root privileges are required to read from `/dev/input/eventX` devices.
 
 ---
 
@@ -70,7 +101,6 @@ Monitoring for keyboard events... (Ctrl+C to stop)
 | `read_RFID.py` | Main script — monitors devices and prints scans |
 | `list_RFID_readers.py` | Module: Detects connected Sycreader RFID devices |
 | `config.py` | Maps raw USB port identifiers to human-readable labels |
-
 
 ---
 

@@ -71,9 +71,9 @@ def monitor_device(device):
                         full_message = ''.join(buffer)
                         buffer.clear()
                         print(
-                            f"\n[{timestamp}] | "
-                            f"Port: {port_name:<35} | "
-                            f"RFID Scan: {full_message}"
+                            f"\n{timestamp} | "
+                            f"Location: {port_name} | "
+                            f"Animal: {full_message}"
                         )
                     elif key_char not in ('BACKSPACE', 'SPACE'):
                         buffer.append(key_char) # Accumulate characters into the buffer
@@ -83,26 +83,25 @@ def monitor_device(device):
     except FileNotFoundError:
         print(f"Error: Device {handler_path} not found. Was it unplugged?")
     except OSError as e:
-        print(f"Error reading {handler_path}: {e}")
+        if e.strerror == 'No such device':
+            print(F"Error: did you unplug it\n")
+        else:
+            print(f"Error reading {handler_path}: {e}")
 
 
 def main():
     
     '''Find all Sycreader RFID devices'''
     print("=" * 60)
-    print("Scanning for connected RFID readers...")
+    print("Scanning for connected RFID readers...\n")
     RFID_readers = get_RFID_devices()
 
     if RFID_readers:
         '''Print info about each reader'''
-        print(f"\nFound {len(RFID_readers)} RFID reader(s):")
+        print(f"Identified {len(RFID_readers)} RFID reader(s), Connected to ports:")
         for device in RFID_readers:
-            print("=" * 60)
-            print(f"  dev_path:      {device.get('dev_path')}")
-            print(f"  dev_name:      {device.get('dev_name')}")
-            print(f"  physical_port: {device.get('physical_port')}")
-            print(f"  port_name:     {device.get('port_name')}")
-            print("=" * 60)
+            print(f"  -->  {device.get('port_name')}")
+        print("=" * 60)
         print("\nMonitoring for keyboard events... (Ctrl+C to stop)")
         print("\n")
 

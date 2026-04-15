@@ -82,7 +82,8 @@ def get_RFID_devices():
         dev = InputDevice(path)
         if "Sycreader" in dev.name or "Keyboard" in dev.name:
             physical_port = get_usb_port(dev.path)
-            port_name = get_port_name(physical_port)
+            port_info = get_port_name(physical_port)
+            port_name = port_info[1]
             rfid_devices.append({
                     'dev_path': dev.path,
                     'dev_name': dev.name,
