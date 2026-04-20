@@ -1,6 +1,8 @@
 # Camera mount for racks
 
-![image](Camera_mount_01.png)
+![image](Camera_mount_v04.png)
+
+
 
 
 ### Assembly file:
