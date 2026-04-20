@@ -3,10 +3,8 @@
 ![image](Camera_mount_v04.png)
 
 
-
-
 ### Assembly file:
-Camera_mount_01.iam
+Camera_mount_v04.iam
 
 ### Sub-assemblies:
 mount_04.iam  
