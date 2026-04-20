@@ -1,15 +1,22 @@
 # Camera mount for racks
 
-![image](Camera_mount_v04.png)
+![image](Camera_mount_v05.png)
 
+### Updates for v05:
+- Thicker structure
+- Added end cap to ensure same positioning (relative to the end of the post)
+- Moved screw hole towards center of post to make it easier for user
+
+
+--> Same angle as v04
 
 ### Assembly file:
-Camera_mount_v04.iam
+Camera_mount_v05.iam
 
 ### Sub-assemblies:
-mount_04.iam  
-mount_04_mirror.iam
+mount_05.iam  
+mount_05_mirror.iam
 
 ### Part files:
-angle_04.ipt  
-angle_04_mirror.ipt
+angle_05.ipt  
+angle_05_mirror.ipt
