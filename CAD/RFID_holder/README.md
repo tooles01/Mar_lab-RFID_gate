@@ -1,3 +1,3 @@
 # RFID holder
 
-![image](../RFID_holder.png)
+![image](../RFID_holder_2piece.png)
