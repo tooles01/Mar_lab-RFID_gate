@@ -1,7 +1,10 @@
 # RFID Reader Scripts
 
-Monitors one or more Sycreader RFID readers simultaneously and prints each scan to the terminal as it occurs.  
+Script to monitor one or more Sycreader RFID readers.  
+Each time a tag is scanned, it prints the **time**, **RFID tag #**, and **RFID reader**.  
 Each reader runs in its own thread.
+
+<br>
 
 ---
 
@@ -13,15 +16,10 @@ Each reader runs in its own thread.
 python3 read_RFID.py
 ```
 
-On launch, the script will:
-1. Scan for connected Sycreader RFID readers
-2. Print a summary of detected readers
-3. Begin monitoring all readers simultaneously
-4. Print a timestamped line to the console each time an RFID tag is scanned
-
-Press **Ctrl+C** to stop monitoring.
-
----
+On launch:
+1. Scans for connected Sycreader RFID readers & print a summary of detected readers
+2. Begin monitoring all readers simultaneously
+3. Print a timestamped line to the console each time an RFID tag is scanned
 
 ## Example Output
 
@@ -30,19 +28,21 @@ Press **Ctrl+C** to stop monitoring.
 Scanning for connected RFID readers...
 
 Identified 2 RFID reader(s), Connected to ports:
-  -->  Gate_2
-  -->  Gate_4
+  -->  RFID_Gate_2
+  -->  RFID_Gate_4
 ============================================================
 
 Monitoring for keyboard events... (Ctrl+C to stop)
 
 
 0621221024
-2026-04-15 18:48:00.409 | Location: Gate_2 | Animal: 0621221024
+2026-04-15 18:48:00.409 | Location: RFID_Gate_2 | Animal: 0621221024
 
 0621221024
-2026-04-15 18:48:01.889 | Location: Gate_4 | Animal: 0621221024
+2026-04-15 18:48:01.889 | Location: RFID_Gate_4 | Animal: 0621221024
 ```
+
+**Gates are mapped via config.py**
 
 <br>
 
@@ -56,6 +56,8 @@ Monitoring for keyboard events... (Ctrl+C to stop)
 ```bash
 python3 list_RFID_readers.py
 ```
+
+<!--
 ### Import as a module
 
 ```python
@@ -65,6 +67,7 @@ devices = get_RFID_devices()
 for d in devices:
     print(d['physical_port'], d['dev_path'])
 ```
+-->
 
 ## Example Output
 ```
@@ -73,14 +76,26 @@ List of connected RFID readers:
   dev_path: /dev/input/event16
   dev_name: Sycreader RFID Technology Co., Ltd SYC ID&IC USB Reader
   physical_port: usb-0000:05:00.3-3.3/input0
-  port_name: Gate_2
+  port_name: RFID_Gate_2
 ============================================================
   dev_path: /dev/input/event17
   dev_name: Sycreader RFID Technology Co., Ltd SYC ID&IC USB Reader
   physical_port: usb-0000:05:00.3-3.1.4/input0
-  port_name: Gate_4
+  port_name: RFID_Gate_4
 ============================================================
 ```
+<br>
+
+---
+---
+
+## Files
+
+| File | Description |
+|---|---|
+| `read_RFID.py` | Main script — monitors devices and prints scans |
+| `list_RFID_readers.py` | Module: Detects connected Sycreader RFID devices |
+| `config.py` | Maps raw USB port identifiers to human-readable labels |
 
 ---
 
@@ -91,16 +106,6 @@ List of connected RFID readers:
 - [`evdev`](https://python-evdev.readthedocs.io/en/latest/)
 
 ***Note:*** Root privileges are required to read from `/dev/input/eventX` devices.
-
----
-
-## Files
-
-| File | Description |
-|---|---|
-| `read_RFID.py` | Main script — monitors devices and prints scans |
-| `list_RFID_readers.py` | Module: Detects connected Sycreader RFID devices |
-| `config.py` | Maps raw USB port identifiers to human-readable labels |
 
 ---
 
