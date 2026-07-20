@@ -4,9 +4,24 @@ Script to monitor one or more Sycreader RFID readers.
 Each time a tag is scanned, it prints the **time**, **RFID tag #**, and **RFID reader**.  
 Each reader runs in its own thread.
 
-<br>
+---
+
+# Requirements
+
+- Linux (reads from `/proc/bus/input/devices`)
+- Python 3
+- [`evdev`](https://python-evdev.readthedocs.io/en/latest/)
+
+**Note:** Root privileges are required to read from `/dev/input/eventX` devices.
 
 ---
+
+## Quick Start
+
+1. Download/clone this folder.
+2. Open the terminal and navigate to the directory this folder is stored in.
+3. Install the required packages by entering `sudo pip install evdev`. (If `Command 'pip' not found`, install pip by running `sudo apt install python3-pip`)
+4. Run the program: `python read_RFID.py`
 
 # Main program
 
@@ -99,15 +114,6 @@ List of connected RFID readers:
 
 ---
 
-## Requirements
-
-- Linux (reads from `/proc/bus/input/devices`)
-- Python 3
-- [`evdev`](https://python-evdev.readthedocs.io/en/latest/)
-
-***Note:*** Root privileges are required to read from `/dev/input/eventX` devices.
-
----
 
 ## Notes
 
