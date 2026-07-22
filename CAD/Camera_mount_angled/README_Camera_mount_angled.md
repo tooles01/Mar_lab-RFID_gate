@@ -1,6 +1,6 @@
 # Camera mount for racks
 
-![image](Camera_mount_v09.png)
+![image](../../images/Camera_mount_v09.png)
 
 <!--
 ### Updates for v05:
