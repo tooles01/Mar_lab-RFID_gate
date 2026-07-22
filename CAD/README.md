@@ -9,6 +9,9 @@ Cameras are mounted at each corner of each cage (x4 per cage)(camera_mount_angle
 
 Cameras (x2) are mounted facing the plastic tube (mount_flat).
 
+# Door mechanism
+![image](door.png)
+Door is operated by using door_script_01.ino (initial draft)
 
 ## Cage connector
 ![image](Cage_connector_v04.png)
