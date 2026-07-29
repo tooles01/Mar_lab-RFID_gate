@@ -6,37 +6,37 @@ Each reader runs in its own thread.
 
 ---
 
-# Requirements
+# Setup
+1. Download/clone this folder.
+2. Open the terminal and navigate to the directory this folder is stored in.
+3. Create a virtual environment `python3 -m venv .venv`.
+4. Activate the virtual environment `source .venv/bin/activate`
+3. Install the required packages by entering `sudo pip install evdev`. (If `Command 'pip' not found`, install pip by running `sudo apt install python3-pip`)
 
-- Linux (reads from `/proc/bus/input/devices`)
-- Python 3
-- [`evdev`](https://python-evdev.readthedocs.io/en/latest/)
+# Quick Start
+1. Open the terminal and navigate to the directory this folder is stored in.
+2. Activate the virtual environment `source .venv/bin/activate`
+3. *Optional:* Check for connected RFID readers `python3 list_RFID_readers.py`
+4. Run the program: `python read_RFID.py`
 
-**Note:** Root privileges are required to read from `/dev/input/eventX` devices.
+<br>
 
 ---
 
-## Quick Start
-
-1. Download/clone this folder.
-2. Open the terminal and navigate to the directory this folder is stored in.
-3. Install the required packages by entering `sudo pip install evdev`. (If `Command 'pip' not found`, install pip by running `sudo apt install python3-pip`)
-4. Run the program: `python read_RFID.py`
-
-# Main program
-
-## Usage
-
+# Scanning RFID tags
+### Usage
 ```bash
 python3 read_RFID.py
 ```
 
-On launch:
+**On launch:**
 1. Scans for connected Sycreader RFID readers & print a summary of detected readers
 2. Begin monitoring all readers simultaneously
 3. Print a timestamped line to the console each time an RFID tag is scanned
 
-## Example Output
+**Note**: Gate numbers are mapped to USB ports via config.py**
+
+### Example Output
 
 ```
 ============================================================
@@ -56,18 +56,12 @@ Monitoring for keyboard events... (Ctrl+C to stop)
 0621221024
 2026-04-15 18:48:01.889 | Location: RFID_Gate_4 | Animal: 0621221024
 ```
-
-**Gates are mapped via config.py**
-
 <br>
 
 ---
 
-# Identify Connected RFID readers
-
-## Usage
-
-### Run directly
+# Identifying Connected RFID readers
+### Usage
 ```bash
 python3 list_RFID_readers.py
 ```
@@ -84,7 +78,7 @@ for d in devices:
 ```
 -->
 
-## Example Output
+### Example Output
 ```
 List of connected RFID readers:
 ============================================================
@@ -103,6 +97,17 @@ List of connected RFID readers:
 
 ---
 ---
+
+## Requirements
+
+- Linux (reads from `/proc/bus/input/devices`)
+- Python 3
+- [`evdev`](https://python-evdev.readthedocs.io/en/latest/)
+
+**Note:** Root privileges are required to read from `/dev/input/eventX` devices.
+
+---
+
 
 ## Files
 
