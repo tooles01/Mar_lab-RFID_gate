@@ -1,16 +1,12 @@
 # Door mechanism
 
-CAD files found [here](../CAD/Door)
-
-![image](../images/door.png)=
-
-<br>
-
-# Usage
+# Quick use
 ### Hardware
 Connect the motor pins to the Arduino
-- *Motor* (IN1, IN2, IN3, IN4) ---> *Arduino* (8, 9, 10, 11)
-- *Motor* (-, +) ---> *Arduino* (GND, 5V)
+| Motor | Arduino |
+| - | - |
+| -, + | GND, 5V |
+| IN1, IN2, IN3, IN4 | 8, 9, 10, 11 |
 
 ### Software
 - Open the Arduino Serial Monitor (9600 baud)
@@ -20,6 +16,7 @@ Connect the motor pins to the Arduino
 
 <br>
 
+# Setup
 ## To upload Arduino script
 **Motor 5V/GND should NOT be connected to Arduino pins while uploading the sketch!!!!!**
 
@@ -59,3 +56,12 @@ Connect the motor pins to the Arduino
 - Open a terminal
 - `sudo usermod -aG dialout acmeneuro`
 - Restart computer
+
+<br>
+
+---
+# CAD
+
+CAD files can be found [here](../CAD/Door)
+
+![image](../images/door.png)
