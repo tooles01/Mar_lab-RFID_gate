@@ -1,6 +1,6 @@
 # Cage connector
 
-![image](../../images/Cage_connector_v04.png)
+![image](../../images/Cage_connector_v06.png)
 
 ### Materials
 | | |
