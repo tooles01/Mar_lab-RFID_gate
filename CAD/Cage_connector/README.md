@@ -1,12 +1,11 @@
 # Cage connector
 
-![image](../../images/Cage_connector_v06.png)
+![image](../../images/Cage_connector_v02.png)
 
 ### Materials
 | | |
 | - | - |
-| cage_inside_04 | 3D printed |
-| cage_outside_04 | 3D printed |
+| cage_connector_02 | 3D printed |
 | Screws (x2) | M3 x 10 |
 | M3 heat-set inserts (x2) |  |
 
