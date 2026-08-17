@@ -64,4 +64,4 @@ Connect the motor pins to the Arduino
 
 CAD files can be found [here](../CAD/Door)
 
-![image](../images/door.png)
+![image](../images/Door_v03.png)

@@ -2,4 +2,4 @@
 
 Control instructions found [here](../Door)
 
-![image](../../images/door.png)
+![image](../../images/Door_v03.png)
