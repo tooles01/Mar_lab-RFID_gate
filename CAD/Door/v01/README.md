@@ -2,7 +2,7 @@
 
 ## v01
 
-![image](../../../images/old/Door_assembly_v01.png)
+![image](../../../images/Door_assembly_v01.png)
 
 ### Materials
 | | |
