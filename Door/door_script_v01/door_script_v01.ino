@@ -57,13 +57,13 @@ void loop() {
     //if (inString != previous_command) {
       if (inString == "open") {
         Serial.println("--> Opening door");
-        stepper.move(STEPS_PER_90_DEG);
+        stepper.move(-STEPS_PER_90_DEG);
         previous_command = "open";
         currentMode = MODE_OPEN;
       }
       else if (inString == "close") {
         Serial.println("--> Closing door");
-        stepper.move(-STEPS_PER_90_DEG);
+        stepper.move(STEPS_PER_90_DEG);
         //stepper.moveTo(0);
         previous_command = "close";
         currentMode = MODE_OPEN;
