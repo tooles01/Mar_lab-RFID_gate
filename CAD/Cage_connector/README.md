@@ -11,7 +11,13 @@
 
 ### Assembly instructions
 
-Use step drill bit for holes in plastic cage.  
+Mark cage hole positions using 3D printed templates  
+([template_holes_02](template_holes_02.ipt))
+([template_holes_02_rev](template_holes_02_rev.ipt))
 
-(x1) 1" hole for tube  
-(x4) 3/16" holes for M3 screws
+![image](../../images/cage_holes_marked.jpg)
+
+Use step drill bit to make (x1) large hole for tube and (x2) small holes for M3 screws.  
+
+Large hole: **1"** diameter  
+M3 through-holes: **3/16"** diameter
