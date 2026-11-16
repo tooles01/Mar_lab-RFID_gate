@@ -6,7 +6,7 @@
 | | |
 | - | - |
 | cage_connector_03 | 3D printed |
-| Screws (x2) | M3 x 10 |
+| Screws (x2) | M3 x 10 (can go down to M3 x 8 mm)|
 | M3 heat-set inserts (x2) |  |
 
 ### Assembly instructions
@@ -20,4 +20,4 @@ Mark cage hole positions using 3D printed templates
 Use step drill bit to make (x1) large hole for tube and (x2) small holes for M3 screws.  
 
 Large hole: **1"** diameter  
-M3 through-holes: **3/16"** diameter
+M3 through-holes: **3/16"** diameter (be really careful with this, maybe go even smaller)
