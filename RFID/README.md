@@ -6,18 +6,56 @@ Each reader runs in its own thread.
 
 ---
 
+[Setup](#setup)  
+[Quick Start](#quick-start)  
+[Scanning RFID tags](#scanning-rfid-tags)  
+[Identifying Connected RFID readers](#identifying-connected-rfid-readers)  
+[Requirements](#requirements)  
+[Files](#files)  
+[Notes](#notes)  
+
+---
+---
+
 # Setup
 1. Download/clone this folder.
 2. Open the terminal and navigate to the directory this folder is stored in.
-3. Create a virtual environment `python3 -m venv .venv`.
-4. Activate the virtual environment `source .venv/bin/activate`
-3. Install the required packages by entering `sudo pip install evdev`. (If `Command 'pip' not found`, install pip by running `sudo apt install python3-pip`)
+
+3. Create a virtual environment.
+    ```bash
+    python3 -m venv .venv
+    ```
+
+4. Activate the virtual environment
+    ```bash
+    source .venv/bin/activate
+    ```
+5. Install the required packages by entering
+    ```bash
+    sudo pip install evdev
+    ```
+    
+    If `Command 'pip' not found`, install pip by running
+    ```bash
+    sudo apt install python3-pip
+    ```
 
 # Quick Start
 1. Open the terminal and navigate to the directory this folder is stored in.
-2. Activate the virtual environment `source .venv/bin/activate`
-3. *Optional:* Check for connected RFID readers `python3 list_RFID_readers.py`
-4. Run the program: `python read_RFID.py`
+2. Activate the virtual environment
+    ```bash
+    source .venv/bin/activate
+    ```
+
+3. *Optional:* Check for connected RFID readers
+    ```bash
+    python3 list_RFID_readers.py
+    ```
+
+4. Run the program:
+    ```bash
+    python read_RFID.py
+    ```
 
 <br>
 
@@ -98,7 +136,7 @@ List of connected RFID readers:
 ---
 ---
 
-## Requirements
+# Requirements
 
 - Linux (reads from `/proc/bus/input/devices`)
 - Python 3
@@ -106,10 +144,11 @@ List of connected RFID readers:
 
 **Note:** Root privileges are required to read from `/dev/input/eventX` devices.
 
+<br>
+
 ---
 
-
-## Files
+# Files
 
 | File | Description |
 |---|---|
@@ -117,10 +156,11 @@ List of connected RFID readers:
 | `list_RFID_readers.py` | Module: Detects connected Sycreader RFID devices |
 | `config.py` | Maps raw USB port identifiers to human-readable labels |
 
+<br>
+
 ---
 
-
-## Notes
+# Notes
 
 - Each reader runs in its own thread, so multiple readers can be monitored
   simultaneously without blocking each other.
